@@ -158,7 +158,7 @@ class CI_Input {
 
 	//angularJS support
 	if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SERVER['CONTENT_TYPE'])){
-		if($_SERVER['CONTENT_TYPE']=='application/json; charset=UTF-8'){
+		if($_SERVER['CONTENT_TYPE']=='application/json; charset=UTF-8' || $_SERVER['CONTENT_TYPE']=='application/json'){
 			$_POST = json_decode(file_get_contents("php://input"),true);
 		}
 	}
